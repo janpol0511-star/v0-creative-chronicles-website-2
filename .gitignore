@@ -1,0 +1,17 @@
+# v0 runtime files (should only exist in preview, not in git)
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+instrumentation-client.js
+instrumentation-client.ts
+
+# Common ignores
+node_modules/
+.next/
+.env*.local
+<<<<<<< HEAD
+.DS_Store
+.vercel
+=======
+.DS_Store
+>>>>>>> dd764d18a07fd7933dcfdd9cdb0aaf03c7166f38
