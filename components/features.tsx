@@ -32,6 +32,13 @@ const features = [
   },
 ]
 
+const featureImages: Record<string, string> = {
+  'Data Driven Success': '/images/analytics.jpg',
+  'Automated Workflows': '/images/transparency.jpg',
+  'Project Management Made Easy': '/images/global-opportunities.jpg',
+  'Collaborative Workspace': '/images/collaboration.jpg',
+}
+
 export function Features() {
   return (
     <section id="features" className="bg-muted/30 px-6 py-20 lg:px-8 lg:py-28">
@@ -59,7 +66,7 @@ export function Features() {
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={"mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl " + feature.color + " transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"}>
+                <div className={"mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl " + feature.color + " transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <Icon className={"h-7 w-7 " + feature.textColor} />
                 </div>
 
@@ -68,6 +75,19 @@ export function Features() {
                 </h3>
 
                 <p className="text-muted-foreground">{feature.description}</p>
+
+                {/* Feature image */}
+                {featureImages[feature.title] && (
+                  <div className="mt-4 overflow-hidden rounded-md">
+                    <Image
+                      src={featureImages[feature.title]}
+                      alt={feature.title}
+                      width={600}
+                      height={340}
+                      className="h-32 w-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                )}
 
                 {/* Decorative gradient */}
                 <div className="absolute -bottom-12 -right-12 h-24 w-24 rounded-full bg-gradient-to-tr from-primary/10 to-secondary/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />

@@ -81,21 +81,18 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Hero Image */}
+            {/* Hero Media: Video (primary) with fallback image */}
             <div className="relative animate-fade-in-right animation-delay-300">
               <div className="animate-pulse-glow absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-                <Image
-                  src="/images/hero-team.jpg"
-                  alt="Creative Chronicle Solutions team collaborating"
-                  width={600}
-                  height={500}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                  priority
-                />
+              <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl transition-transform duration-500 hover:scale-[1.02] bg-black">
+                <video
+                  src="https://res.cloudinary.com/domah6aab/video/upload/v1728429828/Anniversary_Video_2_yrrgm1.mp4"
+                  controls
+                  className="h-full w-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
-              
-              
             </div>
           </div>
         </div>
