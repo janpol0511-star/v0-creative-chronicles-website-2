@@ -2,7 +2,6 @@
 
 import React from "react"
 
-import Image from "next/image"
 import { Mail, Phone, MapPin, Facebook, Linkedin } from "lucide-react"
 
 const footerLinks = {
@@ -49,19 +48,14 @@ export function Footer({ onOpenJobModal }: FooterProps) {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-6 flex items-center gap-4 transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/images/logo.png"
+              <img
+                src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
                 alt="Creative Chronicle Solutions Logo"
-                width={64}
-                height={64}
                 className="h-16 w-16 object-contain drop-shadow-lg"
               />
-              <span className="text-2xl font-bold text-foreground">
-                Creative Chronicle
-              </span>
             </div>
             <p className="mb-6 text-muted-foreground">
-              JESUA DALUMPIUNESTransforming the publishing industry through dedicated sales excellence and innovative solutions.
+              Transforming the publishing industry through dedicated sales excellence and innovative solutions.
             </p>
             
             {/* Contact Info */}
