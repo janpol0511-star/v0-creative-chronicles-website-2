@@ -48,18 +48,21 @@ export function Benefits() {
           </div>
 
           <div className="space-y-16">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className={`flex flex-col items-center gap-8 lg:flex-row ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon
+
+              return (
+                <div
+                  key={benefit.title}
+                  className={`flex flex-col items-center gap-8 lg:flex-row ${
+                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
                 {/* Content */}
                 <div className={`flex-1 text-center lg:text-left ${index % 2 === 0 ? 'animate-fade-in-left' : 'animate-fade-in-right'}`}>
-                  <div className={`mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl ${benefit.color} transition-all duration-300 hover:scale-110 hover:rotate-3`}>
-                    <benefit.icon className={`h-8 w-8 ${benefit.iconColor}`} />
-                  </div>
+                    <div className={`mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl ${benefit.color} transition-all duration-300 hover:scale-110 hover:rotate-3`}>
+                      <Icon className={`h-8 w-8 ${benefit.iconColor}`} />
+                    </div>
                   <h3 className="mb-4 text-2xl font-bold text-foreground lg:text-3xl">
                     {benefit.title}
                   </h3>
@@ -92,8 +95,9 @@ export function Benefits() {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
