@@ -53,8 +53,7 @@ export function Features() {
           {features.map((feature, index) => {
             const Icon = feature.icon
             const cardClasses =
-              'group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up animation-delay-' +
-              (index + 1) * 100
+              'group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up'
 
             return (
               <div
