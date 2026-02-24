@@ -86,7 +86,7 @@ export function Benefits() {
                   <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-lg transition-transform duration-500 hover:scale-[1.02]">
                     <div className="flex aspect-[4/3] items-center justify-center">
                       <Image
-                        src={index === 0 ? "/images/results-oriented.jpg" : index === 1 ? "/images/transparency.jpg" : "/images/global-opportunities.jpg"}
+                        src="/placeholder.svg"
                         alt={benefit.title}
                         width={500}
                         height={350}

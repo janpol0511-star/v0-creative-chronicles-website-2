@@ -80,7 +80,7 @@ export function Features() {
                 {featureImages[feature.title] && (
                   <div className="mt-4 overflow-hidden rounded-md">
                     <Image
-                      src={featureImages[feature.title]}
+                      src={featureImages[feature.title] ?? "/placeholder.svg"}
                       alt={feature.title}
                       width={600}
                       height={340}

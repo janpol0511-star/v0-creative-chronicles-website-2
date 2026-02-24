@@ -84,7 +84,7 @@ export function Collaboration({ onOpenContactModal }: CollaborationProps) {
               <div className="animate-pulse-glow absolute -inset-4 rounded-3xl bg-primary-foreground/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border border-primary-foreground/20 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
                 <Image
-                  src="/images/collaboration.jpg"
+                  src="/placeholder.svg"
                   alt="Team collaboration workspace"
                   width={600}
                   height={450}
