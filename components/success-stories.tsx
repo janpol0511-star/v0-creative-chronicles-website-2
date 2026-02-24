@@ -1,14 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const stories = [
   {
     name: "Aljun",
-    image: "/images/aljun.jpg",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     date: "Jan 17, 2022",
     story: "When Aljun joined our team as a sales agent, he was fresh out of college with a passion for books but limited sales experience. With our comprehensive training and supportive environment, Aljun quickly developed his skills. Within a year, he became the top performer, securing major book deals with national retailers. Aljun's story is a testament to how determination and the right company culture can turn a novice into a sales leader.",
     highlight: "Top Performer",
@@ -16,7 +15,7 @@ const stories = [
   },
   {
     name: "Jasper",
-    image: "/images/jasper.jpg",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
     date: "Aug 2, 2023",
     story: "Jasper came to us with a background in retail, but little experience in publishing sales. He embraced the challenge of learning the industry and found success through persistence and the tailored strategies we provide to our sales agents. In just six months, Jasper broke the company record for the most sales in a quarter, successfully landing our books on the shelves of leading bookstores nationwide.",
     highlight: "Record Breaker",
@@ -24,7 +23,7 @@ const stories = [
   },
   {
     name: "Romulo",
-    image: "/images/romulo.jpg",
+    image: "https://randomuser.me/api/portraits/men/12.jpg",
     date: "Aug 20, 2023",
     story: "Romulo initially joined our team as a part-time sales agent while pursuing his degree in literature. What started as a side job soon became a full-blown passion. With our flexible work structure, he was able to balance his studies and work. Today, Romulo manages some of our top clients, and his innovative approach has helped us expand our reach into new markets. His success story is one of passion turning into a fulfilling career.",
     highlight: "Client Manager",
@@ -63,11 +62,10 @@ export function SuccessStories() {
           <div className="grid lg:grid-cols-2">
             {/* Image */}
             <div className="relative aspect-square overflow-hidden lg:aspect-auto">
-              <Image
+              <img
                 src={stories[activeIndex].image || "/placeholder.svg"}
                 alt={stories[activeIndex].name}
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
               />
               <div className={`absolute left-4 top-4 rounded-full ${stories[activeIndex].color} px-4 py-1`}>
                 <span className="text-sm font-semibold text-primary-foreground">
@@ -146,11 +144,10 @@ export function SuccessStories() {
             >
               <div className="flex items-center gap-4">
                 <div className="relative h-16 w-16 overflow-hidden rounded-xl">
-                  <Image
+                  <img
                     src={story.image || "/placeholder.svg"}
                     alt={story.name}
-                    fill
-                    className="object-cover transition-transform duration-300 hover:scale-110"
+                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
                   />
                 </div>
                 <div>

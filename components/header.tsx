@@ -38,7 +38,7 @@ export function Header({ onOpenContactModal }: HeaderProps) {
             <img
               src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
               alt="Creative Chronicle Solutions Logo"
-              className="h-12 w-12 object-contain drop-shadow-lg sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+              className="h-16 w-16 object-contain drop-shadow-lg sm:h-20 sm:w-20 lg:h-24 lg:w-24"
             />
           </Link>
 
