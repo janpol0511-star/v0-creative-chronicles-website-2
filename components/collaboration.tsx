@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+// using external images via <img>
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MessageCircle, Video, FileText, Calendar, Mail } from "lucide-react"
 import { JobModal } from "@/components/job-modal"
@@ -83,8 +83,8 @@ export function Collaboration({ onOpenContactModal }: CollaborationProps) {
             <div className="relative animate-fade-in-right animation-delay-300">
               <div className="animate-pulse-glow absolute -inset-4 rounded-3xl bg-primary-foreground/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border border-primary-foreground/20 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-                <Image
-                  src="/placeholder.svg"
+                <img
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
                   alt="Team collaboration workspace"
                   width={600}
                   height={450}

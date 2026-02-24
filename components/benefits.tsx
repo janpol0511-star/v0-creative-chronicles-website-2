@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+// using external images via <img>
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Target, Eye, Globe } from "lucide-react"
 import { JobModal } from "@/components/job-modal"
@@ -84,15 +84,21 @@ export function Benefits() {
                     index === 0 ? "bg-primary/10" : index === 1 ? "bg-secondary/10" : "bg-accent/10"
                   } animate-pulse-glow blur-2xl`} />
                   <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-lg transition-transform duration-500 hover:scale-[1.02]">
-                    <div className="flex aspect-[4/3] items-center justify-center">
-                      <Image
-                        src="/placeholder.svg"
-                        alt={benefit.title}
-                        width={500}
-                        height={350}
-                        className="h-full w-full rounded-xl object-cover transition-transform duration-700 hover:scale-105"
-                      />
-                    </div>
+                      <div className="flex aspect-[4/3] items-center justify-center">
+                        <img
+                          src={
+                            index === 0
+                              ? 'https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80'
+                              : index === 1
+                              ? 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=1200&q=80'
+                              : 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80'
+                          }
+                          alt={benefit.title}
+                          width={500}
+                          height={350}
+                          className="h-full w-full rounded-xl object-cover transition-transform duration-700 hover:scale-105"
+                        />
+                      </div>
                   </div>
                 </div>
                 </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+// using external images via <img>
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -20,7 +20,7 @@ const jobs = [
     id: 1,
     title: "Sales Representative",
     description: "Join our dynamic sales team and help connect authors with readers worldwide. You'll be responsible for building relationships with potential clients and driving book sales.",
-    image: "/images/sales-representative.jpg",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
     location: "Cebu, Philippines",
     type: "Full-time",
     experience: "Entry to Mid Level",
@@ -37,7 +37,7 @@ const jobs = [
     id: 2,
     title: "Sales Publishing Consultant",
     description: "As a Sales Publishing Consultant, you'll guide authors through the publishing process while promoting our publishing services. This role combines sales expertise with publishing knowledge.",
-    image: "/images/sales-publishing.jpg",
+    image: "https://images.unsplash.com/photo-1545996124-1e6d8b6a3a54?auto=format&fit=crop&w=1200&q=80",
     location: "Cebu, Philippines",
     type: "Full-time",
     experience: "Mid to Senior Level",
@@ -81,11 +81,10 @@ export function JobModal({ open, onOpenChange }: JobModalProps) {
             >
               {/* Job Image */}
               <div className="relative h-48 overflow-hidden">
-                <Image
+                <img
                   src={job.image || "/placeholder.svg"}
                   alt={job.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">

@@ -1,4 +1,4 @@
-import Image from "next/image"
+// using external images via <img> for remote sources
 import { BarChart3, Workflow, FolderKanban, Users } from "lucide-react"
 
 const features = [
@@ -33,10 +33,10 @@ const features = [
 ]
 
 const featureImages: Record<string, string> = {
-  'Data Driven Success': '/images/analytics.jpg',
-  'Automated Workflows': '/images/transparency.jpg',
-  'Project Management Made Easy': '/images/global-opportunities.jpg',
-  'Collaborative Workspace': '/images/collaboration.jpg',
+  'Data Driven Success': 'https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80',
+  'Automated Workflows': 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
+  'Project Management Made Easy': 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
+  'Collaborative Workspace': 'https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1200&q=80',
 }
 
 export function Features() {
@@ -79,7 +79,7 @@ export function Features() {
                 {/* Feature image */}
                 {featureImages[feature.title] && (
                   <div className="mt-4 overflow-hidden rounded-md">
-                    <Image
+                    <img
                       src={featureImages[feature.title] ?? "/placeholder.svg"}
                       alt={feature.title}
                       width={600}
