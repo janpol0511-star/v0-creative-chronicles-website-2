@@ -52,11 +52,14 @@ export function Features() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon
+            const cardClasses =
+              'group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up animation-delay-' +
+              (index + 1) * 100
 
             return (
               <div
                   key={feature.title}
-                  className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up animation-delay-${(index + 1) * 100}`}
+                  className={cardClasses}
                   style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl ${feature.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
