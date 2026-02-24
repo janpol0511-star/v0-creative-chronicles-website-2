@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
+// using external img for logo
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { JobModal } from "@/components/job-modal"
@@ -35,17 +35,11 @@ export function Header({ onOpenContactModal }: HeaderProps) {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <Link href="/" className="flex items-center gap-4 transition-transform hover:scale-105">
-            <Image
-              src="/images/logo.png"
+            <img
+              src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
               alt="Creative Chronicle Solutions Logo"
-              width={72}
-              height={72}
-              className="h-16 w-16 object-contain drop-shadow-lg sm:h-18 sm:w-18 lg:h-20 lg:w-20"
-              priority
+              className="h-12 w-12 object-contain drop-shadow-lg sm:h-14 sm:w-14 lg:h-16 lg:w-16"
             />
-            <span className="text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
-              Creative Chronicle <span className="text-primary">Solutions</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
