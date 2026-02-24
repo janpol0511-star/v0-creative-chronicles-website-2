@@ -61,7 +61,7 @@ export function Footer({ onOpenJobModal }: FooterProps) {
               </span>
             </div>
             <p className="mb-6 text-muted-foreground">
-              Janpol coronadoTransforming the publishing industry through dedicated sales excellence and innovative solutions.
+              JESUA DALUMPIUNESTransforming the publishing industry through dedicated sales excellence and innovative solutions.
             </p>
             
             {/* Contact Info */}
