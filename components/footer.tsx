@@ -146,18 +146,21 @@ export function Footer({ onOpenJobModal }: FooterProps) {
 
           {/* Social Links */}
           <div className="flex gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:shadow-lg"
-              >
-                <social.icon className="h-5 w-5" />
-                <span className="sr-only">{social.name}</span>
-              </a>
-            ))}
+            {socialLinks.map((social) => {
+              const Icon = social.icon
+              return (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:shadow-lg"
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="sr-only">{social.name}</span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
