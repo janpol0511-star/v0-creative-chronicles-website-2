@@ -40,14 +40,21 @@ export function Collaboration({ onOpenContactModal }: CollaborationProps) {
               {/* Tool badges */}
               <div className="mb-8 flex flex-wrap gap-3">
                 {tools.map((tool, index) => (
-                  <div
-                    key={tool.label}
-                    className="flex animate-fade-in-up items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 backdrop-blur transition-all duration-300 hover:scale-105 hover:bg-primary-foreground/20"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <tool.icon className="h-4 w-4 text-primary-foreground" />
-                    <span className="text-sm font-medium text-primary-foreground">{tool.label}</span>
-                  </div>
+                    <div
+                      key={tool.label}
+                      className="flex animate-fade-in-up items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 backdrop-blur transition-all duration-300 hover:scale-105 hover:bg-primary-foreground/20"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {(() => {
+                        const Icon = tool.icon
+                        return (
+                          <>
+                            <Icon className="h-4 w-4 text-primary-foreground" />
+                            <span className="text-sm font-medium text-primary-foreground">{tool.label}</span>
+                          </>
+                        )
+                      })()}
+                    </div>
                 ))}
               </div>
 

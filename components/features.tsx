@@ -50,15 +50,18 @@ export function Features() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up animation-delay-${(index + 1) * 100}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl ${feature.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                <feature.icon className={`h-7 w-7 ${feature.textColor}`} />
-              </div>
+          {features.map((feature, index) => {
+            const Icon = feature.icon
+
+            return (
+              <div
+                key={feature.title}
+                className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up animation-delay-${(index + 1) * 100}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl ${feature.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                  <Icon className={`h-7 w-7 ${feature.textColor}`} />
+                </div>
               <h3 className="mb-3 text-xl font-semibold text-card-foreground transition-colors group-hover:text-primary">
                 {feature.title}
               </h3>
