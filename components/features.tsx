@@ -98,8 +98,8 @@ export function Features() {
 
         {/* Image Section */}
         <div className="mt-16 animate-scale-in overflow-hidden rounded-3xl border border-border shadow-xl transition-transform duration-500 hover:scale-[1.01]">
-          <Image
-            src="/images/analytics.jpg"
+          <img
+            src={featureImages['Data Driven Success']}
             alt="Analytics dashboard showing sales performance"
             width={1200}
             height={500}
