@@ -39,7 +39,7 @@ export function Header({ onOpenContactModal }: HeaderProps) {
               <img
                 src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
                 alt="Creative Chronicle Solutions Logo"
-                className="absolute left-0 top-1/2 -translate-y-1/2 h-20 sm:h-28 lg:h-36 object-contain drop-shadow-xl pointer-events-none"
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-20 sm:h-28 lg:h-36 object-contain drop-shadow-xl pointer-events-none z-50"
               />
               <span className="sr-only">Creative Chronicle Solutions</span>
             </div>
