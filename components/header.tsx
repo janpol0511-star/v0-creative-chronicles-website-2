@@ -34,12 +34,15 @@ export function Header({ onOpenContactModal }: HeaderProps) {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <Link href="/" className="flex items-center gap-4 transition-transform hover:scale-105">
-            <img
-              src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
-              alt="Creative Chronicle Solutions Logo"
-              className="h-20 w-20 object-contain drop-shadow-xl sm:h-28 sm:w-28 lg:h-36 lg:w-36"
-            />
+          <Link href="/" className="transition-transform hover:scale-105">
+            <div className="relative h-16 sm:h-20 lg:h-24 flex items-center">
+              <img
+                src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
+                alt="Creative Chronicle Solutions Logo"
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-20 sm:h-28 lg:h-36 object-contain drop-shadow-xl pointer-events-none"
+              />
+              <span className="sr-only">Creative Chronicle Solutions</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

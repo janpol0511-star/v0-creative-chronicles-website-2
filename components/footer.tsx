@@ -47,12 +47,15 @@ export function Footer({ onOpenJobModal }: FooterProps) {
         <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-6 flex items-center gap-4 transition-transform duration-300 hover:scale-105">
-              <img
-                src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
-                alt="Creative Chronicle Solutions Logo"
-                className="h-24 w-24 object-contain drop-shadow-xl sm:h-32 sm:w-32 lg:h-36 lg:w-36"
-              />
+            <div className="mb-6 transition-transform duration-300 hover:scale-105">
+              <div className="relative h-16 sm:h-20 lg:h-24 flex items-center">
+                <img
+                  src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
+                  alt="Creative Chronicle Solutions Logo"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 h-24 sm:h-32 lg:h-36 object-contain drop-shadow-xl pointer-events-none"
+                />
+                <span className="sr-only">Creative Chronicle Solutions</span>
+              </div>
             </div>
             <p className="mb-6 text-muted-foreground">
               Transforming the publishing industry through dedicated sales excellence and innovative solutions.
