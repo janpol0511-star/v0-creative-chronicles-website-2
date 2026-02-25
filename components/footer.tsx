@@ -51,7 +51,7 @@ export function Footer({ onOpenJobModal }: FooterProps) {
               <img
                 src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
                 alt="Creative Chronicle Solutions Logo"
-                className="h-20 w-20 object-contain drop-shadow-lg sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                className="h-24 w-24 object-contain drop-shadow-xl sm:h-32 sm:w-32 lg:h-36 lg:w-36"
               />
             </div>
             <p className="mb-6 text-muted-foreground">
