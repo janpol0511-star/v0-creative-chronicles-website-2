@@ -33,13 +33,13 @@ export function Header({ onOpenContactModal }: HeaderProps) {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8 pr-20 lg:pr-32">
           <Link href="/" className="transition-transform hover:scale-105 relative z-50">
             <div className="relative h-16 sm:h-20 lg:h-24 flex items-center overflow-visible z-50">
               <img
                 src="https://framerusercontent.com/images/641vTth7zJIhrEdbNEZ1Evuk38.png"
                 alt="Creative Chronicle Solutions Logo"
-                className="absolute right-14 lg:right-4 top-1/2 -translate-y-1/2 h-28 sm:h-36 lg:h-48 object-contain drop-shadow-xl pointer-events-none z-50"
+                className="absolute right-4 top-2 h-24 sm:h-32 lg:h-44 xl:h-52 object-contain drop-shadow-xl z-50"
               />
               <span className="sr-only">Creative Chronicle Solutions</span>
             </div>

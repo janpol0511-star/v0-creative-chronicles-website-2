@@ -84,7 +84,7 @@ export function Hero() {
             {/* Hero Media: Video (primary) with fallback image */}
             <div className="relative animate-fade-in-right animation-delay-300">
               <div className="animate-pulse-glow absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl transition-transform duration-500 hover:scale-[1.02] bg-black">
+              <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl transition-transform duration-500 hover:scale-[1.02] bg-black h-64 sm:h-80 lg:h-[480px]">
                 <video
                   src="https://res.cloudinary.com/domah6aab/video/upload/v1728429828/Anniversary_Video_2_yrrgm1.mp4"
                   controls
