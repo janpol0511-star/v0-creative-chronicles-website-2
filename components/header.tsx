@@ -65,12 +65,12 @@ export function Header({ onOpenContactModal }: HeaderProps) {
             >
               Success Stories
             </button>
-            <button
-              onClick={() => scrollToSection("about")}
+            <Link
+              href="/about"
               className="relative text-sm font-medium text-muted-foreground transition-all hover:text-primary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               About
-            </button>
+            </Link>
           </div>
 
           <div className="hidden lg:flex">
@@ -118,12 +118,13 @@ export function Header({ onOpenContactModal }: HeaderProps) {
               >
                 Success Stories
               </button>
-              <button
-                onClick={() => scrollToSection("about")}
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
                 className="block w-full rounded-lg px-3 py-2 text-left text-base font-medium text-muted-foreground hover:bg-muted hover:text-primary"
               >
                 About
-              </button>
+              </Link>
               <div className="pt-2">
                 <Button 
                   onClick={() => {
