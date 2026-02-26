@@ -2,7 +2,11 @@
 
 import Image from "next/image"
 
-export function About() {
+interface AboutProps {
+  onOpenJobModal?: () => void
+}
+
+export function About({ onOpenJobModal }: AboutProps) {
   return (
     <section id="about" className="bg-background px-6 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
@@ -14,7 +18,12 @@ export function About() {
                 Creative Chronicle Solutions is a leading book publisher specializing in high-quality sales books and guides. We help authors bring ideas to life, publish impactful works, and market them to the right audience with expert support.
               </p>
               <div className="mt-6">
-                <a href="/careers" className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">Apply Now</a>
+                <button
+                  onClick={() => onOpenJobModal && onOpenJobModal()}
+                  className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+                >
+                  Apply Now
+                </button>
               </div>
             </div>
 

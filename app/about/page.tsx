@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       <Header onOpenContactModal={() => setContactModalOpen(true)} />
-      <About />
+      <About onOpenJobModal={() => setJobModalOpen(true)} />
       <Footer onOpenJobModal={() => setJobModalOpen(true)} onOpenContactModal={() => setContactModalOpen(true)} />
       <JobModal open={jobModalOpen} onOpenChange={setJobModalOpen} />
       <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 // using external img for logo
 import { Button } from "@/components/ui/button"
@@ -14,8 +15,20 @@ interface HeaderProps {
 export function Header({ onOpenContactModal }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [jobModalOpen, setJobModalOpen] = useState(false)
+  const router = useRouter()
 
   const scrollToSection = (id: string) => {
+    // If we're not on the home page, navigate to home with hash
+    try {
+      if (typeof window !== "undefined" && window.location.pathname !== "/") {
+        setMobileMenuOpen(false)
+        router.push(`/#${id}`)
+        return
+      }
+    } catch (e) {
+      // fallback to in-page scroll
+    }
+
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
