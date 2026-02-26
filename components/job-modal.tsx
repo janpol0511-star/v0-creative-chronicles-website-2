@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { useRouter } from "next/navigation"
 import { ArrowRight, MapPin, Clock, Briefcase, DollarSign, X } from "lucide-react"
 
 interface JobModalProps {
@@ -53,6 +54,7 @@ const jobs = [
 ]
 
 export function JobModal({ open, onOpenChange }: JobModalProps) {
+  const router = useRouter()
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="animate-slide-in-modal max-h-[90vh] w-[95vw] max-w-2xl overflow-y-auto bg-background p-0 sm:w-[90vw] md:max-w-3xl">
@@ -138,10 +140,17 @@ export function JobModal({ open, onOpenChange }: JobModalProps) {
                   asChild
                   className="w-full bg-primary text-primary-foreground transition-all hover:bg-primary/90 hover:scale-[1.02] hover:shadow-lg"
                 >
-                  <a href={job.applyUrl} target="_blank" rel="noopener noreferrer">
-                    Apply Now
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onOpenChange(false)
+                          router.push(`/about?apply=true&position=${encodeURIComponent(job.title)}`)
+                        }}
+                        className="flex items-center w-full justify-center"
+                      >
+                        Apply Now
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </button>
                 </Button>
               </div>
             </div>
@@ -153,7 +162,7 @@ export function JobModal({ open, onOpenChange }: JobModalProps) {
           <p className="text-sm text-muted-foreground">
             {"Don't see a position that fits? "}
             <a 
-              href="mailto:creativechroniclesolutions@gmail.com" 
+              href="mailto:hrrecruitment@creativechroniclesolutions.com" 
               className="font-medium text-primary hover:underline"
             >
               Contact us

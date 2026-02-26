@@ -64,11 +64,11 @@ export function Footer({ onOpenJobModal }: FooterProps) {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:creativechroniclesolutions@gmail.com"
+                href="mailto:hrrecruitment@creativechroniclesolutions.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
                 <Mail className="h-5 w-5 text-primary" />
-                <span>creativechroniclesolutions@gmail.com</span>
+                <span>hrrecruitment@creativechroniclesolutions.com</span>
               </a>
               <a 
                 href="tel:+639175551234"

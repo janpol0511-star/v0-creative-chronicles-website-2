@@ -19,8 +19,12 @@ interface ContactModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
+interface ContactModalExtras {
+  mode?: "message" | "application"
+  initialPosition?: string | null
+}
 
-export function ContactModal({ open, onOpenChange }: ContactModalProps) {
+export function ContactModal({ open, onOpenChange, mode = "message", initialPosition = null }: ContactModalProps & ContactModalExtras) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -28,21 +32,37 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
     email: "",
     message: "",
   });
+  const [file, setFile] = useState<File | null>(null)
+  const [position, setPosition] = useState<string | null>(initialPosition)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Basic validation for application mode
+    if (mode === "application") {
+      if (!position) {
+        alert("Please select a position.")
+        return
+      }
+      if (!file) {
+        alert("Please upload your CV or portfolio.")
+        return
+      }
+    }
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
+    // Simulate form submission / upload
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset after showing success
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: "", email: "", message: "" });
+      setFile(null)
+      setPosition(null)
       onOpenChange(false);
     }, 2500);
   };
@@ -78,10 +98,10 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                 <CheckCircle className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-foreground">
-                Message Sent!
+                {mode === "application" ? "Application Submitted!" : "Message Sent!"}
               </h3>
               <p className="text-muted-foreground">
-                Thank you for reaching out. We will get back to you shortly.
+                {mode === "application" ? "Thank you for applying. We will review your submission and contact you." : "Thank you for reaching out. We will get back to you shortly."}
               </p>
             </div>
           ) : (
@@ -123,22 +143,61 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               </div>
 
               {/* Message Field */}
-              <div className="space-y-2">
-                <Label htmlFor="message" className="flex items-center gap-2 text-foreground">
-                  <MessageSquare className="h-4 w-4 text-primary" />
-                  Message
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="How can we help you?"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="resize-none border-border bg-background transition-all focus:border-primary focus:ring-primary"
-                />
-              </div>
+              {mode === "message" ? (
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="flex items-center gap-2 text-foreground">
+                    <MessageSquare className="h-4 w-4 text-primary" />
+                    Message
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="How can we help you?"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="resize-none border-border bg-background transition-all focus:border-primary focus:ring-primary"
+                  />
+                </div>
+              ) : (
+                <>
+                  <div className="space-y-2">
+                    <Label htmlFor="position" className="flex items-center gap-2 text-foreground">Position</Label>
+                    <select
+                      id="position"
+                      name="position"
+                      value={position ?? ""}
+                      onChange={(e) => setPosition(e.target.value)}
+                      required
+                      className="w-full rounded-md border-border bg-background px-3 py-2 text-sm"
+                    >
+                      <option value="">Select a position</option>
+                      <option>Sales Representative</option>
+                      <option>Sales Publishing Consultant</option>
+                      <option>Business Development Manager</option>
+                      <option>Marketing Sales Specialist</option>
+                      <option>Lead Mine</option>
+                      <option>Graphic Designer</option>
+                      <option>Illustrator</option>
+                      <option>3D Animator</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="file" className="flex items-center gap-2 text-foreground">Upload CV / Portfolio</Label>
+                    <input
+                      id="file"
+                      name="file"
+                      type="file"
+                      accept=".pdf,.doc,.docx,.zip,image/*"
+                      onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
+                      required
+                      className="w-full"
+                    />
+                  </div>
+                </>
+              )}
 
               {/* Submit Button */}
               <Button
@@ -166,10 +225,10 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
             <p className="text-center text-sm text-muted-foreground">
               Or reach us directly at{" "}
               <a
-                href="mailto:creativechroniclesolutions@gmail.com"
+                href="mailto:hrrecruitment@creativechroniclesolutions.com"
                 className="font-medium text-primary transition-colors hover:underline"
               >
-                creativechroniclesolutions@gmail.com
+                hrrecruitment@creativechroniclesolutions.com
               </a>
             </p>
           </div>
