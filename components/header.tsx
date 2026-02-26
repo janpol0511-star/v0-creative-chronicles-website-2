@@ -66,10 +66,10 @@ export function Header({ onOpenContactModal }: HeaderProps) {
               Success Stories
             </button>
             <button
-              onClick={handleContactClick}
+              onClick={() => scrollToSection("about")}
               className="relative text-sm font-medium text-muted-foreground transition-all hover:text-primary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
-              Contact Us
+              About
             </button>
           </div>
 
@@ -119,10 +119,10 @@ export function Header({ onOpenContactModal }: HeaderProps) {
                 Success Stories
               </button>
               <button
-                onClick={handleContactClick}
+                onClick={() => scrollToSection("about")}
                 className="block w-full rounded-lg px-3 py-2 text-left text-base font-medium text-muted-foreground hover:bg-muted hover:text-primary"
               >
-                Contact Us
+                About
               </button>
               <div className="pt-2">
                 <Button 

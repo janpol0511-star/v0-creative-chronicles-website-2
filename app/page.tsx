@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Features } from "@/components/features"
 import { Benefits } from "@/components/benefits"
+import { About } from "@/components/about"
 import { Collaboration } from "@/components/collaboration"
 import { SuccessStories } from "@/components/success-stories"
 import { CTA } from "@/components/cta"
@@ -20,6 +21,7 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Header onOpenContactModal={() => setContactModalOpen(true)} />
       <Hero />
+      <About />
       <Features />
       <Benefits />
       <Collaboration onOpenContactModal={() => setContactModalOpen(true)} />
